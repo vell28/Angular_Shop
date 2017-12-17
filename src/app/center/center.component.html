@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 carousel-wrap">
+            <carousel>
+                <slide class='item-slide'>
+                    <img src="http://www.revelion.com.ro/web/wp-content/uploads/2016/08/oferta-moscova-2.jpg" alt="First slide">
+                    <div class="carousel-caption">
+                    <h1 class="display-3">A Warm Welcome!</h1>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+                    <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
+                    </div>
+                </slide>
+                <slide class='item-slide'>
+                    <img src="https://tetintao.files.wordpress.com/2010/10/singapur.jpg" alt="Second slide">
+                    <div class="carousel-caption">
+                    <h1 class="display-3">A Warm Welcome!</h1>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+                    <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
+                    </div>
+                </slide>
+            </carousel> 
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="text" class="form-control" id="usr" [(ngModel)]="searchStr" placeholder="Search Phone">
+            </div>
+        </div>
+        <div class="col-md-12 filter-bar">
+            <button class="btn btn-primary" (click)="filterBy = 'price'">Filter Price</button>
+            <button class="btn btn-primary" (click)="filterBy = 'name'">Filter Name</button>
+        </div>
+        <div 
+            class="col-lg-3 col-sm-6 mb-4 item-wrap" 
+            *ngFor="let phone of collection |  paginate: { itemsPerPage: 8, currentPage: p } | search:searchStr | filtername"
+        >
+            <img class="card-img-top" src="{{phone.imageUrl}}" alt="{{phone.name}}">
+            <div class="card-body" [routerLink]="['/detail', phone.id]">
+                <h4 class="card-title">{{phone.name | slice: 0: 15 | uppercase }}</h4>
+                <p class="card-text">{{ phone.snippet | slice: 0: 37}}</p>
+                <span class="card-prise"><strong>price:{{phone.price}}$</strong></span>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary" [routerLink]="['/detail', phone.id]" routerLinkActive="active" >Find More!</a>
+                <button class="btn btn-primary " (click)="selectedPhone(phone); selectLength();">Add to Cart</button>
+                </div>
+            </div>
+        <div>       
+    </div>
+    <div class="page-nav-wrap">
+        <div class="page-nav">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div> 
+    </div>
+</div>

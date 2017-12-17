@@ -1,0 +1,50 @@
+.phone-name{
+    margin: 110px 0 70px 0;
+}
+h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 42px;
+    font-weight: bold;
+    border-bottom: 1px solid #cdcdcd;
+    width: 42%;
+    margin: 0 auto;
+}
+h5{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: bold; 
+    margin-bottom: 40px;
+}
+h5 span{
+    color: red;
+}
+.img-wrap{
+    box-shadow: 0 0 7px 2px #cdcdcd;
+    padding: 50px;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+.img-wrap img{
+    transition: 0.7s all ease;
+}
+.img-wrap img:hover{
+    transform: scale(1.2,1.2);
+}
+.right-text{
+    padding: 50px;
+    text-align: center;
+}
+.right-text p{
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+button{
+    width: 52%;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    padding: 10px 0;
+    font-weight: bold;
+    cursor: pointer;
+}

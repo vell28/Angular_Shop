@@ -1,0 +1,18 @@
+ul{
+    margin-top: 10px;
+}
+li{
+  margin: 0 10px;  
+}
+.form-group{
+    position: relative;
+}
+input{
+    text-align: center;
+    flex-wrap: bold;
+    width: 150px;
+}
+button{
+    background: transparent;
+    border: none;
+}
